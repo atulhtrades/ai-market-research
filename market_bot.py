@@ -149,14 +149,24 @@ def main():
 
     report_lines = []
 
-    report_lines.append("AI MARKET RESEARCH REPORT")
-    report_lines.append(str(datetime.now()))
-    report_lines.append("")
-    report_lines.append("NEWS SCORE: " + str(news_score))
-    report_lines.append("")
-    report_lines.append("HEADLINES:")
-    report_lines.append(news_summary)
-    report_lines.append("")
+report_lines.append("══════════════════════════════")
+report_lines.append("📈 AI MARKET RESEARCH REPORT")
+report_lines.append("══════════════════════════════")
+report_lines.append("")
+
+report_lines.append("Date & Time:")
+report_lines.append(str(datetime.now()))
+report_lines.append("")
+
+report_lines.append("Overall News Sentiment Score:")
+report_lines.append(str(round(news_score, 2)))
+report_lines.append("")
+
+report_lines.append("══════════════════════════════")
+report_lines.append("TOP HEADLINES")
+report_lines.append("══════════════════════════════")
+report_lines.append(news_summary)
+report_lines.append("")
 
     results = []
 
