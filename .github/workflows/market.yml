@@ -1,0 +1,33 @@
+name: AI Market Research
+
+on:
+  schedule:
+    - cron: "*/15 * * * 1-5"
+
+  workflow_dispatch:
+
+jobs:
+  run-market-bot:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Requirements
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Market Bot
+        run: |
+          python market_bot.py
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
