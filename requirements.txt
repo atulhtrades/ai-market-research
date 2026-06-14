@@ -1,0 +1,7 @@
+feedparser
+yfinance
+pandas
+numpy
+pytz
+beautifulsoup4
+lxml
